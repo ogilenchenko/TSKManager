@@ -1,0 +1,46 @@
+﻿<button class="btn btn-default" ng-click="openNewBoard()">New Board</button>
+<div ng-show="starredBoards.length">
+    <h1>Starred Boards</h1>
+    <ul class="board-list starred">
+        <li data-ng-repeat="board in starredBoards" ng-class="{'starred' : board.isStarred}">
+            <a href="#/boards/{{board.id}}">
+                <span class="details">
+                    <span class="" title="{{board.name}}">{{board.name}}</span>
+                    <span title="There is new activity on this board."></span>
+                    <span class="glyphicon glyphicon-star" title="Click to star this board. It will show up at top of your boards list." ng-click="updateStarred(board, $event)"></span>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h1>My Boards</h1>
+    <ul class="board-list">
+        <li data-ng-repeat="board in boards" ng-class="{'starred' : board.isStarred}">
+            <a href="#/boards/{{board.id}}">
+                <span class="details">
+                    <span class="" title="{{board.name}}">{{board.name}}</span>
+                    <span title="There is new activity on this board."></span>
+                    <span class="glyphicon glyphicon-star" title="Click to star this board. It will show up at top of your boards list." ng-click="updateStarred(board, $event)"></span>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/ng-template" id="newBoardModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">New Board</h3>
+    </div>
+    <form name="newBoardForm" ng-submit="submit(newBoardForm)">
+        <div class="modal-body">
+            <label>Name</label>
+            <input type="text" class="form-control" ng-model="newBoard.name" placeholder="Untitled Board" required maxlength="50" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel($event)">Cancel</button>
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </form>   
+</script>

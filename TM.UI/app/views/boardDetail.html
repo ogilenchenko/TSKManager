@@ -1,0 +1,46 @@
+﻿<div ui-sortable="listsSortableOptions" ng-model="board.lists" class="board-detail">
+    <div data-ng-repeat="list in board.lists" class="list">
+        <div class="header">
+            <span>{{list.name}}</span>
+        </div>
+        <div class="list-cards">
+            <ul ui-sortable="cardsSortableOptions" ng-model="list.cards" class="list-cards">
+                <li data-ng-repeat="card in list.cards" class="list-card" ng-click="showDetailCard(card)">
+                    <div class="list-card-details">
+                        <a class="list-card-title">
+                            <span>{{card.name}}</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="card-composer" ng-show="list.isAddCardShow">
+                <div class="list-card">
+                    <div class="list-card-details">
+                        <textarea ng-model="list.newCardTitle"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <input type="button" class="btn btn-primary" value="Add" ng-click="addCard(list)">
+                    <a class="glyphicon glyphicon-remove" ng-click="cancelAddCard(list)"></a>
+                </div>
+            </div>
+        </div>
+        <a class="add-card" href="" ng-click="addCardShow(list)" ng-show="!list.isAddCardShow">Add a card…</a>
+    </div>
+</div>
+
+<script type="text/ng-template" id="detailCardModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Card</h3>
+    </div>
+    <!--<form name="newBoardForm" ng-submit="submit(newBoardForm)">
+        <div class="modal-body">
+            <label>Name</label>
+            <input type="text" class="form-control" ng-model="newBoard.name" placeholder="Untitled Board" required maxlength="50" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel($event)">Cancel</button>
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </form>-->
+</script>

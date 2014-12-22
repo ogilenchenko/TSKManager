@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CE5BF54-0FF6-4CAF-96FA-BA2627649CDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TM.Database</RootNamespace>
+    <AssemblyName>TM.Database</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="EfGenericRepository.cs" />
+    <Compile Include="EfUnitOfWork.cs" />
+    <Compile Include="Enums\ApplicationTypes.cs" />
+    <Compile Include="Helpers\EncryptionHelper.cs" />
+    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="IntPrimaryKey.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Migrations\201409132233552_Initial.cs" />
+    <Compile Include="Migrations\201409132233552_Initial.Designer.cs">
+      <DependentUpon>201409132233552_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409140938109_AddedRefreshTokensAndClients.cs" />
+    <Compile Include="Migrations\201409140938109_AddedRefreshTokensAndClients.Designer.cs">
+      <DependentUpon>201409140938109_AddedRefreshTokensAndClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409271104285_AddedBoardListCardLabel.cs" />
+    <Compile Include="Migrations\201409271104285_AddedBoardListCardLabel.Designer.cs">
+      <DependentUpon>201409271104285_AddedBoardListCardLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410071345197_UpdatedUsersFieled.cs" />
+    <Compile Include="Migrations\201410071345197_UpdatedUsersFieled.Designer.cs">
+      <DependentUpon>201410071345197_UpdatedUsersFieled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Board.cs" />
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\CardLabel.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Label.cs" />
+    <Compile Include="Models\List.cs" />
+    <Compile Include="Models\RefreshToken.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409132233552_Initial.resx">
+      <DependentUpon>201409132233552_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409140938109_AddedRefreshTokensAndClients.resx">
+      <DependentUpon>201409140938109_AddedRefreshTokensAndClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409271104285_AddedBoardListCardLabel.resx">
+      <DependentUpon>201409271104285_AddedBoardListCardLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410071345197_UpdatedUsersFieled.resx">
+      <DependentUpon>201410071345197_UpdatedUsersFieled.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
