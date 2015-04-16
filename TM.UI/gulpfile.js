@@ -23,12 +23,12 @@ var paths = {
 }
 
 // JS Lint
-//gulp.task('jshint', function() {
-//    return gulp.src(paths.dev.js)
-//        .pipe(jshint())
-//        .pipe(jshint.reporter('default'))
-//        .pipe(jshint.reporter('fail'));
-//});
+gulp.task('jshint', function() {
+    return gulp.src(paths.dev.js)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'));
+});
 
 // Usemin : Concat & Minify Scripts un add revision to avoid cache
 gulp.task('usemin', function() {
@@ -57,7 +57,5 @@ gulp.task('clean', function() {
     del.sync(paths.build.base);
 });
 
-gulp.task('default', ['clean',
-   // 'jshint',
-     'fonts', 'views', 'usemin'], function () {
+gulp.task('default', ['clean', 'jshint', 'fonts', 'views', 'usemin'], function() {
 });

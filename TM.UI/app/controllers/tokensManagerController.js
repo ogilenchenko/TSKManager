@@ -1,6 +1,5 @@
-﻿'use strict';
-app.controller('tokensManagerController', ['$scope', 'tokensManagerService', function ($scope, tokensManagerService) {
-
+﻿app.controller('tokensManagerController', ['$scope', 'tokensManagerService', function ($scope, tokensManagerService) {
+    'use strict';
     $scope.refreshTokens = [];
 
     tokensManagerService.getRefreshTokens().then(function(results) {

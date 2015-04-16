@@ -1,6 +1,5 @@
-﻿'use strict';
-app.controller('associateController', ['$scope', '$location', '$timeout', 'authService', function ($scope, $location, $timeout, authService) {
-
+﻿app.controller('associateController', ['$scope', '$location', '$timeout', 'authService', function ($scope, $location, $timeout, authService) {
+    'use strict';
     $scope.savedSuccessfully = false;
     $scope.message = "";
 

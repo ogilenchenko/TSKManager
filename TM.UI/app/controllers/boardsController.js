@@ -1,5 +1,5 @@
-﻿'use strict';
-app.controller('boardsController', ['$scope', 'boardsService', '$modal', function ($scope, boardsService, $modal) {
+﻿app.controller('boardsController', ['$scope', 'boardsService', '$modal', function ($scope, boardsService, $modal) {
+    'use strict';
     $scope.starredBoards = [];
     $scope.boards = [];
     $scope.userId = '';

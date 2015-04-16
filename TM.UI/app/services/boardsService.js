@@ -1,6 +1,5 @@
-﻿'use strict';
-app.factory('boardsService', ['$http', function ($http) {
-
+﻿app.factory('boardsService', ['$http', function ($http) {
+    'use strict';
     var serviceBase = 'http://tm-api.loc/';
     var dashboardServiceFactory = {};
 

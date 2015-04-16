@@ -1,5 +1,5 @@
-﻿'use strict';
-app.controller('boardDetailController', ['$scope', 'boardDetailService', '$routeParams', '$modal', function ($scope, boardDetailService, $routeParams, $modal) {
+﻿app.controller('boardDetailController', ['$scope', 'boardDetailService', '$routeParams', '$modal', function ($scope, boardDetailService, $routeParams, $modal) {
+    'use strict';
     $scope.boardId = $routeParams.boardId;
     $scope.board = {};
 

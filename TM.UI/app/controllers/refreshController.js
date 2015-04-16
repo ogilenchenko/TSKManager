@@ -1,6 +1,5 @@
-﻿'use strict';
-app.controller('refreshController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
-
+﻿app.controller('refreshController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
+    'use strict';
     $scope.authentication = authService.authentication;
     $scope.tokenRefreshed = false;
     $scope.tokenResponse = null;

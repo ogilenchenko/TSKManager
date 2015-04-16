@@ -1,6 +1,5 @@
-﻿'use strict';
-app.factory('authInterceptorService', ['$q', '$location', 'localStorageService', '$injector', function ($q, $location, localStorageService, $injector) {
-
+﻿app.factory('authInterceptorService', ['$q', '$location', 'localStorageService', '$injector', function ($q, $location, localStorageService, $injector) {
+    'use strict';
     var authInterceptorServiceFactory = {};
 
     var _request = function(config) {

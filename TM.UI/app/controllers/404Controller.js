@@ -1,4 +1,3 @@
-﻿'use strict';
-app.controller('404Controller', ['$scope', function ($scope) {
-
+﻿app.controller('404Controller', ['$scope', function ($scope) {
+    'use strict';
 }]);
