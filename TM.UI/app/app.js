@@ -8,47 +8,47 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when("/home", {
         controller: "homeController",
-        templateUrl: "/app/views/home.html"
+        templateUrl: "/views/home.html"
     });
 
     $routeProvider.when("/login", {
         controller: "loginController",
-        templateUrl: "/app/views/login.html"
+        templateUrl: "/views/login.html"
     });
 
     $routeProvider.when("/signup", {
         controller: "signupController",
-        templateUrl: "/app/views/signup.html"
+        templateUrl: "/views/signup.html"
     });
 
     $routeProvider.when("/boards", {
         controller: "boardsController",
-        templateUrl: "/app/views/boards.html"
+        templateUrl: "/views/boards.html"
     });
 
     $routeProvider.when("/boards/:boardId", {
         controller: "boardDetailController",
-        templateUrl: "/app/views/boardDetail.html"
+        templateUrl: "/views/boardDetail.html"
     });
 
     $routeProvider.when("/refresh", {
         controller: "refreshController",
-        templateUrl: "/app/views/refresh.html"
+        templateUrl: "/views/refresh.html"
     });
 
     $routeProvider.when("/tokens", {
         controller: "tokensManagerController",
-        templateUrl: "/app/views/tokens.html"
+        templateUrl: "/views/tokens.html"
     });
 
     $routeProvider.when("/associate", {
         controller: "associateController",
-        templateUrl: "/app/views/associate.html"
+        templateUrl: "/views/associate.html"
     });
 
     $routeProvider.when("/404", {
         controller: "404Controller",
-        templateUrl: "/app/views/404.html"
+        templateUrl: "/views/404.html"
     });
 
     $routeProvider.otherwise({ redirectTo: "/home" });
